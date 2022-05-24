@@ -1,39 +1,39 @@
+
+
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Movies</title>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movies</title>
+    <script src='https://cdn.jsdelivr.net/npm/meilisearch@latest/dist/bundles/meilisearch.umd.js'></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+      </symbol>
+    </svg>
+  </head>
 
-  <script src='https://cdn.jsdelivr.net/npm/meilisearch@latest/dist/bundles/meilisearch.umd.js'></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-    <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
-      <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
-    </symbol>
-  </svg>
-</head>
-
-<body>
-  <main>
-    <div class="px-4 py-5 my-5 text-center">
+  <body>
+    <main>
+      <div class="px-4 py-5 my-5 text-center">
       <h1 class="display-1 fw-bold">💬 🎥</h1>
       <h1 class="display-5 fw-bold">Movies <small class="text-muted">dot</small> Kerollmops <small class="text-muted">dot</small> com</h1>
       <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">Quickly find the quotes of your favorite movies by using <a href="https://meilisearch.com" title="The official Meilisearch website">the power of Meilisearch</a>.<br/>This website is a personal project to show what Meilisearch can do and the value it can add to your projects!</p>
-
         <div class="container col-md-2"></div>
         <div class="container col-md-8 text-start">
           <div class="alert alert-primary d-flex align-items-center alert-dismissible fade show" role="alert">
-            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
+              <use xlink:href="#info-fill"/>
+            </svg>
             <div>We recommend enabling auto-play of the audio and video</div>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
         </div>
-
       </div>
 
       <div class="container py-3">
@@ -47,103 +47,119 @@
         <div class="container col-md-8 text-start">
           <h4>Search for a movie line</h4>
           <p class="text-muted tips">👋 You can press <kbd>enter</kbd> to jump to the next matching movie line</p>
-          <p class="text-muted tips">👋 You can share this movie line to your friends by sending the URL itself</p>
+          <p class="text-muted tips">👋 You can share this movie line to your friends by simply sending this URL</p>
           <div class="input-group">
-            <select id="index" style="max-width: 30%;" class="form-select" aria-label="Example select with button addon">
-              <option selected value="la-classe-americaine">La Classe Américaine</option>
-              <option value="mission-cleopatre">Mission Cléopâtre</option>
-              <option value="oss117-le-caire-nid-d-espion">OSS 117 : Le Caire, nid d'espions</option>
+            <select id="index" style="max-width: 30%;" class="form-select">
+              <!-- Auto-filled by the index.json file stored on S3 -->
             </select>
-            <input id="search" type="text" autocomplete="off" class="form-control" autofocus aria-describedby="emailHelp" placeholder="e.g. Homards, le premier">
+            <input id="search" type="text" autocomplete="off" class="form-control" autofocus placeholder="e.g. Homards, le premier">
           </div>
         </div>
       </div>
-  </main>
+    </main>
 
-  <script type="text/javascript">
-    // load the url params
-    const urlParams = new URLSearchParams(window.location.search);
-    const movie = urlParams.get('movie');
-    const query = urlParams.get('query');
+    <script type="text/javascript">
+      // load the url params
+      const urlParams = new URLSearchParams(window.location.search);
+      const movie = urlParams.get('movie');
+      const query = urlParams.get('query');
 
-    previousRequest = undefined;
-    i = urlParams.get('index') || 0;
-    lastResult = [];
+      previousRequest = undefined;
+      i = urlParams.get('index') || 0;
+      lastResult = [];
 
-    $('#index').change(function() {
-      let baseURL = "https://movies-dot-kerollmops-dot-com.s3.fr-par.scw.cloud";
-      let value = $(this).val();
-      $('#video source').attr('src', `${baseURL}/${value}.mp4`);
-      $('#video track').attr('src', `${baseURL}/${value}.vtt`);
-      $("#video")[0].load();
-      updateURL();
-    });
-
-    $('#search').on('input', function() {
-      if (previousRequest) {
-        previousRequest.abort();
-      }
-
-      let value = $(this).val();
-      // let baseURL = `${window.location.protocol}//${window.location.hostname}`;
-      let baseURL = `http://localhost:7700`;
-      let url = `${baseURL}/indexes/${index.value}/search?q=${search.value}&attributesToHighlight=*`;
-      previousRequest = $.get(url, function(data) {
-        // save the last results
-        if (lastResult.length != 0) {
-          i = 0;
-        }
-        lastResult = data.hits;
-
-        if (current = lastResult[i]) {
-          // millis to seconds
-          let newTime = current.start / 1000;
-
-          // change only if far from expected
-          if (Math.abs(video.currentTime - newTime) > 2) {
-            seekAndPlayVideo(video, newTime);
-          }
-          updateURL();
-        }
-
+      $('#index').change(function() {
+        let baseURL = "https://movies-dot-kerollmops-dot-com.s3.fr-par.scw.cloud";
+        let value = $(this).val();
+        $('#video source').attr('src', `${baseURL}/${value}.mp4`);
+        $("#video")[0].load();
+        updateURL();
       });
 
-      document.onkeyup = pressEnter;
-      function pressEnter(e) {
-        var keycode = (window.event) ? event.keyCode : e.keyCode;
-        if (keycode == 13) { // enter
+      $('#search').on('input', function() {
+        if (previousRequest) {
+          previousRequest.abort();
+        }
 
-          if (current = lastResult[i + 1]) {
-            i += 1;
+        let value = $(this).val();
+        // let baseURL = `${window.location.protocol}//${window.location.hostname}`;
+        let baseURL = `http://localhost:7700`;
+        let url = `${baseURL}/indexes/${index.value}/search?q=${search.value}&attributesToHighlight=*`;
+        previousRequest = $.get(url, function(data) {
+          // save the last results
+          if (lastResult.length != 0) {
+            i = 0;
+          }
+          lastResult = data.hits;
 
-            // millis to seconds
-            let newTime = current.start / 1000;
-
-            // seek the video to the timing
-            seekAndPlayVideo(video, newTime);
+          if (current = lastResult[i]) {
+            // We only move if we are 2 seconds from our goal.
+            if (Math.abs(video.currentTime - current.start / 1000) > 2) {
+              if (value.trim().length != 0) {
+                seekAndPlayVideo(video, current.start);
+              } else {
+                video.pause();
+              }
+            }
             updateURL();
           }
+        });
+
+        document.onkeyup = pressEnter;
+        function pressEnter(e) {
+          var keycode = (window.event) ? event.keyCode : e.keyCode;
+          if (keycode == 13) { // enter
+
+            if (current = lastResult[i + 1]) {
+              i += 1;
+
+              // seek the video to the timing
+              if (value.trim().length != 0) {
+                seekAndPlayVideo(video, current.start);
+                updateURL();
+              } else {
+                video.pause();
+              }
+            }
+          }
         }
+      });
+
+      // manually trigger the change when we enter the page
+      // to be sure that the movie line explorer jumps to the state.
+      $(document).ready(function() {
+        $.get("https://movies-dot-kerollmops-dot-com.s3.fr-par.scw.cloud/index.json", function(movies) {
+          loadAndSetupMovies(movies);
+
+          if (movie) {
+            $("#index").val(movie);
+          }
+          $("#search").val(query);
+          $("#index").trigger("change");
+          $("#search").trigger("input");
+        });
+
+        // We initialise a timer that change the displayed tip every minute
+        displayRandomTip();
+        setInterval(displayRandomTip, 60 * 1000);
+      });
+
+      // Load the list of available movies and setup the select dropdown.
+      function loadAndSetupMovies(movies) {
+        for (const movie of movies) {
+          $('<option/>')
+            .val(movie.indexName)
+            .text(movie.name)
+            .appendTo('#index');
+        }
+
+        // <option selected value="la-classe-americaine">La Classe Américaine</option>
+        // <option value="mission-cleopatre">Mission Cléopâtre</option>
+        // <option value="oss117-le-caire-nid-d-espion">OSS 117 : Le Caire, nid d'espions</option>
       }
-    });
 
-    // manually trigger the change when we enter the page
-    // to be sure that the movie line explorer jumps to the state.
-    $(document).ready(function() {
-      if (movie) {
-        $("#index").val(movie);
-      }
-      $("#search").val(query);
-      $("#index").trigger("change");
-      $("#search").trigger("input");
-
-      // We initialise a timer that change the displayed tip every minute
-      displayRandomTip();
-      setInterval(displayRandomTip, 60 * 1000);
-    });
-
-    function displayRandomTip() {
-      let total = $(".tips").length;
+      function displayRandomTip() {
+        let total = $(".tips").length;
         let n = getRandomInt(total);
         $(".tips").each(function(index) {
           if (index == n) {
@@ -152,42 +168,42 @@
             $(this).addClass("d-none");
           }
         });
-    }
-
-    // This function refreshes the URL params, it is the current state of the page.
-    // The URL can then be shared with other users.
-    function updateURL() {
-      let title = document.title;
-      let baseURL = `${window.location.origin}${window.location.pathname}`;
-      let movie = encodeURIComponent($('#index').val());
-      let query = encodeURIComponent($('#search').val());
-      let index = i;
-      let url = `${baseURL}?movie=${movie}&query=${query}&index=${index}`;
-      window.history.replaceState({}, title, url);
-    }
-
-    var videoPausedByHand = false;
-    function playPauseVideoByHand(thisVideo) {
-      if (thisVideo.paused) {
-        videoPausedByHand = false;
-        thisVideo.play();
-      } else {
-        videoPausedByHand = true;
-        thisVideo.pause();
       }
-    }
 
-    function seekAndPlayVideo(thisVideo, newTime) {
-      thisVideo.currentTime = newTime;
-      if (!videoPausedByHand && thisVideo.paused) {
-        thisVideo.play();
+      // This function refreshes the URL params, it is the current state of the page.
+      // The URL can then be shared with other users.
+      function updateURL() {
+        let title = document.title;
+        let baseURL = `${window.location.origin}${window.location.pathname}`;
+        let movie = encodeURIComponent($('#index').val());
+        let query = encodeURIComponent($('#search').val());
+        let index = i;
+        let url = `${baseURL}?movie=${movie}&query=${query}&index=${index}`;
+        window.history.replaceState({}, title, url);
       }
-    }
 
-    function getRandomInt(max) {
-      return Math.floor(Math.random() * max);
-    }
-  </script>
+      var videoPausedByHand = false;
+      function playPauseVideoByHand(thisVideo) {
+        if (thisVideo.paused) {
+          videoPausedByHand = false;
+          thisVideo.play();
+        } else {
+          videoPausedByHand = true;
+          thisVideo.pause();
+        }
+      }
 
-</body>
+      function seekAndPlayVideo(thisVideo, startInMs) {
+        let newTime = startInMs / 1000; // millis to seconds
+        thisVideo.currentTime = newTime;
+        if (!videoPausedByHand && thisVideo.paused) {
+          thisVideo.play();
+        }
+      }
+
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+      }
+    </script>
+  </body>
 </html>

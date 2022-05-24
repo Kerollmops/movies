@@ -36,6 +36,8 @@ in a newly created index. The index name should be clear and be named after the 
 The JSON documents should look like the following, the id doesn't matter.
 You can use [the vtt2csv crate](https://lib.rs/vtt2csv) to convert it.
 
+_We would like to clean up the HTML tags from the text, it would be better_
+
 ```json
 {
     "id": "574",
@@ -62,3 +64,4 @@ This file is a JSON file that lists the things that are available to the users, 
 ```
 
 Once you updated it on the S3, please make sure that the file is public and accessible!
+You will most likely need to change the CORS of the S3 bucket, you can find [an example on how to do so with scaleway and `s3cmd`](https://www.scaleway.com/en/docs/tutorials/s3cmd/#configuring-cors) and the _cors.xml_ file in this repository.

@@ -82,26 +82,28 @@
         }
 
         let value = $(this).val();
-        // let baseURL = `${window.location.protocol}//${window.location.hostname}`;
-        let baseURL = `http://localhost:7700`;
-        let url = `${baseURL}/indexes/${index.value}/search?q=${search.value}&attributesToHighlight=*`;
-        previousRequest = $.get(url, function(data) {
-          // save the last results
-          if (lastResult.length != 0) {
-            i = 0;
-          }
-          lastResult = data.hits;
-
-          if (current = lastResult[i]) {
-            // We only move if we are 2 seconds from our goal.
-            if (Math.abs(video.currentTime - current.start / 1000) > 2) {
-              if (value.trim().length != 0) {
-                seekAndPlayVideo(video, current.start);
-              } else {
-                video.pause();
-              }
+        let baseURL = `https://ms-583b7545c778-103.lon.meilisearch.io`;
+        previousRequest = $.ajax({
+          url: `${baseURL}/indexes/${index.value}/search?q=${search.value}&attributesToHighlight=*`,
+          headers: { "Authorization": " Bearer TqYsMSBr6ed053835f18a9882aa49790bbd692cbad21ebbe41e3ad471460a51ec82ce056" },
+          success: function(data) {
+            // save the last results
+            if (lastResult.length != 0) {
+              i = 0;
             }
-            updateURL();
+            lastResult = data.hits;
+
+            if (current = lastResult[i]) {
+              // We only move if we are 2 seconds from our goal.
+              if (Math.abs(video.currentTime - current.start / 1000) > 2) {
+                if (value.trim().length != 0) {
+                  seekAndPlayVideo(video, current.start);
+                } else {
+                  video.pause();
+                }
+              }
+              updateURL();
+            }
           }
         });
 

@@ -7,13 +7,13 @@ Find the lines in your favorite movies
 The movies, subtitles and settings of the website are currently on an S3 scaleway bucket named `movies-dot-kerollmops-dot-com`.
 It is on my personnal account and I pay for it by myself.
 
-The Meilisearch indexes are stored on the <https:://cloud.meilisearch.com> service on an instance named `movies-dot-kerollmops-dot-com`.
+The Meilisearch indexes are stored on the <https://cloud.meilisearch.com> service on an instance named `movies-dot-kerollmops-dot-com`.
 It is on my personnal account and I pay for it by myself.
 
 ## How to index a new movie
 
 This instruction details the steps you need to add a new movie and to be able
-to search into it on <https:://movies.kerollmops.com>.
+to search into it on <https://movies.kerollmops.com>.
 
 ### Send the movie on the S3 storage
 

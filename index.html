@@ -98,8 +98,6 @@
               if (Math.abs(video.currentTime - current.start / 1000) > 2) {
                 if (value.trim().length != 0) {
                   seekAndPlayVideo(video, current.start);
-                } else {
-                  video.pause();
                 }
               }
               updateURL();
@@ -119,8 +117,6 @@
               if (value.trim().length != 0) {
                 seekAndPlayVideo(video, current.start);
                 updateURL();
-              } else {
-                video.pause();
               }
             }
           }

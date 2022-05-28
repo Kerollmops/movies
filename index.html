@@ -23,51 +23,52 @@
 
   <body>
     <main>
-      <div class="py-5 my-5 text-center">
-      <h1 class="display-1 fw-bold">💬 🎥</h1>
-      <h1 class="display-5 fw-bold">Movies <small class="text-muted">dot</small> Kerollmops <small class="text-muted">dot</small> com</h1>
-      <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4">Quickly find the quotes of your favorite movies by using <a href="https://meilisearch.com" title="The official Meilisearch website">the power of Meilisearch</a>.<br/>This website is a personal project to show what Meilisearch can do and the value it can add to your projects!</p>
-        <div class="container col-md-2"></div>
-        <div class="container col-md-8 text-start">
-          <div class="alert alert-primary d-flex align-items-center alert-dismissible fade show" role="alert">
-            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
-              <use xlink:href="#info-fill"/>
-            </svg>
-            <div>We recommend enabling auto-play of the audio and video</div>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      <div class="my-5 text-center">
+        <h1 class="display-1 fw-bold">💬 🎥</h1>
+        <h1 class="display-5 fw-bold">Movies <small class="text-muted">dot</small> Kerollmops <small class="text-muted">dot</small> com</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">Quickly find the quotes of your favorite movies by using <a href="https://meilisearch.com" title="The official Meilisearch website">the power of Meilisearch</a>.<br/>This website is a personal project to show what Meilisearch can do and the value it can add to your projects!</p>
+          <div class="container col-md-2"></div>
+          <div class="container col-md-8 text-start">
+            <div class="alert alert-primary d-flex align-items-center alert-dismissible fade show" role="alert">
+              <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
+                <use xlink:href="#info-fill"/>
+              </svg>
+              <div>We recommend enabling auto-play of the audio and video</div>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="container py-3">
-        <video id="video" playsinline style="width: 100%" onclick="playPauseVideoByHand(this);">
-          <source type="video/mp4">
-        </video>
-      </div>
-
-      <div class="container">
-        <div class="container col-md-2"></div>
-        <div class="container col-md-8 text-start">
-          <h4>Search for a movie line</h4>
-          <div class="py-3 input-group">
-            <select id="index" style="max-width: 30%;" class="form-select">
-              <!-- Auto-filled by the index.json file stored on S3 -->
-            </select>
-            <input id="search" type="text" autocomplete="off" class="form-control" autofocus placeholder="e.g. Homards, le premier">
-          </div>
-          <p class="text-muted tips">👋 You can press <kbd>enter</kbd> to jump to the next matching movie line</p>
-          <p class="text-muted tips">👋 You can share this movie line to your friends by simply sending this URL</p>
+        <div class="container py-3">
+          <video id="video" playsinline style="width: 100%" onclick="playPauseVideoByHand(this);">
+            <source type="video/mp4">
+          </video>
         </div>
 
-        <script src="https://utteranc.es/client.js"
-                repo="kerollmops/movies"
-                issue-term="homepage"
-                label="comments"
-                theme="preferred-color-scheme"
-                crossorigin="anonymous"
-                async>
-        </script>
+        <div class="container">
+          <div class="container col-md-2"></div>
+          <div class="container col-md-8 text-start">
+            <h4>Search for a movie line</h4>
+            <div class="py-3 input-group">
+              <select id="index" style="max-width: 30%;" class="form-select">
+                <!-- Auto-filled by the index.json file stored on S3 -->
+              </select>
+              <input id="search" type="text" autocomplete="off" class="form-control" autofocus placeholder="e.g. Homards, le premier">
+            </div>
+            <p class="text-muted tips">👋 You can press <kbd>enter</kbd> to jump to the next matching movie line</p>
+            <p class="text-muted tips">👋 You can share this movie line to your friends by simply sending this URL</p>
+          </div>
+
+          <script src="https://utteranc.es/client.js"
+                  repo="kerollmops/movies"
+                  issue-term="homepage"
+                  label="comments"
+                  theme="preferred-color-scheme"
+                  crossorigin="anonymous"
+                  async>
+          </script>
+        </div>
       </div>
     </main>
 

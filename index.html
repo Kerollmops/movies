@@ -130,7 +130,7 @@
         let baseURL = `https://ms-583b7545c778-103.lon.meilisearch.io`;
         previousRequest = $.ajax({
           url: `${baseURL}/indexes/${index.value}/search?q=${search.value}&attributesToHighlight=*`,
-          headers: { "Authorization": " Bearer TqYsMSBr6ed053835f18a9882aa49790bbd692cbad21ebbe41e3ad471460a51ec82ce056" },
+          headers: { "Authorization": " Bearer db9e09b398825cc2a49abfac346346e39374a69a644f2cdca57a8dfb24363c1b" },
           success: function(data) {
             // save the last results
             if (lastResult.length != 0) {
